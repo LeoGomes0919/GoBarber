@@ -75,4 +75,10 @@ export const Error = styled(Tooltip)`
       border-color: #c53030 transparent;
     }
   }
+
+  @media (max-width: 480px) {
+    span::before {
+      border-color: transparent transparent transparent #c53030;
+    }
+  }
 `;
