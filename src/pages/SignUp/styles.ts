@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 import backgroundImg from '../../assets/signup-background.png';
 
@@ -13,9 +13,31 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   max-width: 600px;
   width: 100%;
   padding: 0px 16px;
+`;
+
+const apperFromBottom = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`;
+
+export const AnimationContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: ${apperFromBottom} 1s;
 
   form {
     display: flex;
@@ -36,21 +58,20 @@ export const Content = styled.div`
   }
 
   > a {
-      color: #f4ede8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 26px;
-      text-decoration: none;
-      transition: 0.2s color;
+    color: #f4ede8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 26px;
+    text-decoration: none;
+    transition: 0.2s color;
 
-      svg {
-        margin-right: 8px;
-      }
+    svg {
+      margin-right: 8px;
+    }
 
-      &:hover {
-        color: ${shade(0.2, '#f4ede8')};
-      }
+    &:hover {
+      color: ${shade(0.2, '#f4ede8')};
     }
   }
 `;
